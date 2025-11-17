@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #a3caff, #c7b8ff);
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #1e2a78;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #1e2a78;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #3b49df;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  color: #1e2a78;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #3b49df;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #2a36b1;
+}
+
+.login-text {
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+.login-text a {
+  color: #3b49df;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-image img {
+  width: 350px;
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #1e2a78;
+  font-size: 0.95em;
+  font-weight: 500;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(6px);
+}
+
+/* Floating animation for hero image */
+.hero-image img {
+  width: 350px;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Add slight hover effect for interaction */
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for floating motion */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Fade-in + slide animation for hero text */
+.hero-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1.5s ease-out forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
