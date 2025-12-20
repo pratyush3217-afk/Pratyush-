@@ -112,50 +112,6 @@ header {
   line-height: 1.6;
 }
 
-/* Skills */
-.skills {
-  padding: 2rem 5%;
-}
-
-.skill-bar {
-  margin-bottom: 1rem;
-}
-
-.bar {
-  background: #1e293b;
-  border-radius: 25px;
-  overflow: hidden;
-  height: 10px;
-}
-
-.bar span {
-  display: block;
-  height: 10px;
-  background: #38bdf8;
-}
-
-/* Projects */
-.project-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 2rem 5%;
-}
-
-.project-card {
-  background: #1e293b;
-  padding: 1.5rem;
-  border-radius: 15px;
-  width: 300px;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  background: #334155;
-}
-
 /* Contact */
 .contact form {
   display: flex;
@@ -182,3 +138,4 @@ footer {
   color: #94a3b8;
   margin-top: 2rem;
 }
+
