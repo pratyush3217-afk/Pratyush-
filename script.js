@@ -1,41 +1,24 @@
-// Smooth scroll effect
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
-
-// Contact form feedback (frontend only)
-const form = document.querySelector("form");
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-  form.reset();
-});
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbyKWGmHkj6DA8siQqEnT7djqeKfwLwzbSGuYexHK1uSToR4DyIsX9wbRe5OmdRdjb7oOQ/exec";
+const scriptURL = "PASTE_YOUR_WEB_APP_URL_HERE";
 
 const form = document.getElementById("contactForm");
 const status = document.getElementById("status");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
+  status.style.color = "#94a3b8";
+  status.innerText = "Sending...";
 
   fetch(scriptURL, {
     method: "POST",
-    body: new FormData(form)
+    body: new FormData(form),
   })
-  .then(response => {
-    status.innerText = "Message sent successfully!";
-    form.reset();
-  })
-  .catch(error => {
-    status.innerText = "Error sending message!";
-    console.error("Error!", error.message);
-  });
+    .then(() => {
+      status.style.color = "#22c55e";
+      status.innerText = "Message sent successfully!";
+      form.reset();
+    })
+    .catch(() => {
+      status.style.color = "#ef4444";
+      status.innerText = "Something went wrong. Try again!";
+    });
 });
-
-
